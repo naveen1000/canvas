@@ -12,9 +12,9 @@ function drawWall() {
     ctx.strokeStyle="grey";
     ctx.strokeRect(0,0,w,h);
 
-    ctx.font ='30px Arial';
+    ctx.font ='15px Arial';
     ctx.fillStyle='grey';
-    ctx.fillText('Naveen Kumar',w-250,60);
+    ctx.fillText('Naveen Kumar',w-150,h-30);
 }
 
 const c ={
