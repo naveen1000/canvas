@@ -1,6 +1,7 @@
 const canvas= document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
+
 canvas.width = window.innerWidth-20;
 canvas.height = window.innerHeight-20;
 w = canvas.width;
@@ -9,21 +10,23 @@ h = canvas.height;
 //ctx.fillRect(10,10,100,100);
 function drawWall() {
     ctx.lineWidth=20;
-    ctx.strokeStyle="grey";
+    ctx.strokeStyle="hsl(249, 34%, 39%)";
     ctx.strokeRect(0,0,w,h);
 
     ctx.font ='15px Arial';
-    ctx.fillStyle='grey';
+    ctx.fillStyle='hsl(249, 34%, 39%)';
     ctx.fillText('Naveen Kumar',w-150,h-30);
 }
 
 c =[{x:200, y:200, size:20, dx:1, dy:2, color:0},
-    {x:200, y:200, size:20,dx:-2, dy:-1, color:2},
+    {x:200, y:200, size:20,dx:-2, dy:-1, color:3},
     {x:200, y:200, size:20,dx:2, dy:1, color:7},
-    {x:200,y:200,  size:20,dx:-1,dy:2, color:6}
+    {x:200,y:200,  size:20,dx:-1,dy:2, color:11}
 ];
 
-colors = ['red' , 'blue' ,'yellow' ,'green', 'white','pink' ,'brown', 'violet' ,'grey']
+colors = ['red' , 'chartreuse' ,'yellow' ,'rgb(198, 207, 70)', 'white','aqua' ,'brown', 'violet' ,'rgb(55, 27, 82)',
+'rgb(70, 207, 200)','hsl(64, 75%, 42%)','rgb(207, 75, 219)','rgb(148, 112, 248)','rgb(196, 44, 196)','rgb(117, 19, 117)',
+'rgb(19, 117, 57)','#3e7e0a','hsl(19, 86%, 47%)']
 
 function drawCircle( c , color){
     ctx.beginPath();
