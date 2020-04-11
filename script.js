@@ -17,40 +17,14 @@ function drawWall() {
     ctx.fillText('Naveen Kumar',w-150,h-30);
 }
 
-const c ={
-    x:200,
-    y:200,
-    size:20,
-    dx:1,
-    dy:2,
-    color:0
-}
-const c2 ={
-    x:200,
-    y:200,
-    size:20,
-    dx:2,
-    dy:3,
-    color:2
-}
+c =[{x:200, y:200, size:20, dx:1, dy:2, color:0},
+    {x:200, y:200, size:20,dx:-2, dy:-1, color:2},
+    {x:200, y:200, size:20,dx:2, dy:1, color:7},
+    {x:200,y:200,  size:20,dx:-1,dy:2, color:6}
+];
 
-const c3 ={
-    x:200,
-    y:200,
-    size:20,
-    dx:2,
-    dy:1,
-    color:7
-}
-const c4 ={
-    x:200,
-    y:200,
-    size:20,
-    dx:-1,
-    dy:2,
-    color:6
-}
 colors = ['red' , 'blue' ,'yellow' ,'green', 'white','pink' ,'brown', 'violet' ,'grey']
+
 function drawCircle( c , color){
     ctx.beginPath();
     ctx.arc(c.x, c.y , c.size , 0 , Math.PI *2)
@@ -77,22 +51,12 @@ function update() {
 
     ctx.clearRect(0 , 0 , canvas.width ,canvas.height);
     drawWall()
+    for (let i = 0; i< c.length; i++) {
+        drawCircle(c[i],colors[c[i].color]);
+        changePosition(c[i]);
+        detectWall(c[i]);
+    }
     
-    drawCircle(c,colors[c.color]);
-    changePosition(c);
-    detectWall(c);
-
-    drawCircle(c2,colors[c2.color]);
-    changePosition(c2);
-    detectWall(c2);   
-
-    drawCircle(c3,colors[c3.color]);
-    changePosition(c3);
-    detectWall(c3);   
-    
-    drawCircle(c4,colors[c4.color]);
-    changePosition(c4);
-    detectWall(c4);   
     requestAnimationFrame(update);
 
 }
